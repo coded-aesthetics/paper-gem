@@ -170,7 +170,13 @@
         first = false;
 
     }
-
+	window.onresize = function () {
+			SCREEN_WIDTH = window.innerWidth;
+			SCREEN_HEIGHT = window.innerHeight;
+			camera = new THREE.PerspectiveCamera( 35, SCREEN_WIDTH / SCREEN_HEIGHT, 1, 25000 );
+        camera.position.z = 200;
+			renderer.setSize( SCREEN_WIDTH, SCREEN_HEIGHT );
+		};
 
     function init() {
         var sphere = new THREE.SphereGeometry( 62, 16, 8 );
